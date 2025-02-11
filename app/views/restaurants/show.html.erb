@@ -1,13 +1,11 @@
-<div class="container mt-5">
 
-    <h1><%= @restaurant.name%></h1>
-    <div class="m-5">
-      <p>🏠 &nbsp <%= @restaurant.address %></p>
-      <p>📞 &nbsp <%= @restaurant.phone_number %></p>
-      <p>⭐️ &nbsp <%= @restaurant.rating %>/5</p>
-      <p>🥣 &nbsp <%= @restaurant.category %></p>
-    </div>
-    <div class="mt-4">
-    <h2><%= link_to "🔙", restaurants_path %></h2>
-    </div>
+<h1><%= @restaurant.name%></h1>
+<div class="m-5">
+  <p>🏠 &nbsp <%= @restaurant.address %></p>
+  <p>📞 &nbsp <%= @restaurant.phone_number %></p>
+  <p>🥣 &nbsp <%= @restaurant.category %></p>
+</div>
+
+<div class="mt-4">
+<h2><%= link_to "🔙", restaurants_path %></h2>
 </div>
