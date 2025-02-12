@@ -13,28 +13,22 @@ puts 'Creating 5 fake restaurants...'
 Restaurant.destroy_all
 restaurant_category = [ "chinese", "italian", "japanese", "french", "belgian" ]
 
-# restaurant1 = Restaurant.new(
-#       name: "Le Petit Pois",
-#       adress: "12, rue de la loire, 75002 Paris",
-#       phone_number: "01.42.35.36.24",
-#       rating: Random.rand(0..5),
-#       category: restaurant_category[rand(restaurant_category.length)]
-#     )
-#     restaurant1.save!
 
 
 5.times do
-  restaurant = Restaurant.new(
+  restaurant1 = Restaurant.new(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
     phone_number: Faker::PhoneNumber.phone_number_with_country_code,
-    rating: Random.rand(0..5),
     category: restaurant_category[rand(restaurant_category.length)]
   )
-  restaurant.save!
+  restaurant1.save!
+  comment1 = Review.new(content: Faker::Restaurant.review, rating: Random.rand(0..5))
+  comment1.restaurant = restaurant1
+  comment1.save!
+  comment2 = Review.new(content: Faker::Restaurant.review, rating: Random.rand(0..5))
+  comment2.restaurant = restaurant1
+  comment2.save!
 end
 
 puts 'Finished!'
-
-
-# Faker::Restaurant.review
